@@ -27,25 +27,26 @@ public class Exercise01 {
         System.out.println(pointC);
     }
 
-    private static class Point {
+}
 
-        protected int x, y, z;
+class Point {
 
-        public Point() {
-            x = 0;
-            y = 0;
-            z = 0;
-        }
+    protected int x, y, z;
 
-        public Point(int _x, int _y, int _z) {
-            x = _x;
-            y = _y;
-            z = _z;
-        }
+    public Point() {
+        x = 0;
+        y = 0;
+        z = 0;
+    }
 
-        @Override
-        public String toString() {
-            return "(" + x + ", " + y + ", " + z + ")";
-        }
+    public Point(int _x, int _y, int _z) {
+        x = _x;
+        y = _y;
+        z = _z;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + x + ", " + y + ", " + z + ")";
     }
 }
