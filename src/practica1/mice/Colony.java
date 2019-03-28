@@ -21,6 +21,7 @@ public class Colony {
         this.code = code;
         this.caretaker = caretaker;
         this.daysInHouse = daysInHouse;
+        this.mice = new ArrayList<Mouse>();
     }
 
     public void add(Mouse mouse) {
@@ -39,7 +40,7 @@ public class Colony {
 
     public void remove(String code) {
         for (int i = 0; i < mice.size(); i++) {
-            if (mice.get(i).getReference() == code) {
+            if (mice.get(i).getReference().equals(code)) {
                 mice.remove(i);
                 break; // Only remove once, or we might go out of bounds.
             }
@@ -51,8 +52,14 @@ public class Colony {
         mice.add(mouse);
     }
 
-    public void showDetails(String code) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String showDetails(String code) {
+        for (int i = 0; i < mice.size(); i++) {
+            if (mice.get(i).getReference().equals(code)) {
+                return mice.get(i).toString();
+            }
+        }
+        
+        return "Mouse not found";
     }
 
     public String getCode() {

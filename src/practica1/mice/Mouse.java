@@ -5,8 +5,7 @@
  */
 package practica1.mice;
 
-import java.util.Arrays;
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -15,13 +14,13 @@ import java.util.Date;
 public class Mouse {
 
     private String reference, comments;
-    private Date birthDate;
+    private LocalDate birthDate;
     private Gender gender;
     private int weight;
     private float temperature;
     private boolean chrom1, chrom2;
 
-    public Mouse(String reference, Date birthDate, Gender gender, int weight, float temperature, boolean chrom1, boolean chrom2, String comments) {
+    public Mouse(String reference, LocalDate birthDate, Gender gender, int weight, float temperature, boolean chrom1, boolean chrom2, String comments) {
         this.reference = reference;
         this.comments = comments;
         this.birthDate = birthDate;
@@ -48,11 +47,11 @@ public class Mouse {
         this.comments = comments;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -110,16 +109,13 @@ public class Mouse {
             } else {
                 phenotype = "Wild type";
             }
-
         } else {
             if (chrom1) {
                 phenotype += "Sterile ";
             }
-
             if (chrom2) {
                 phenotype += "Polygamous";
             }
-
             if (!chrom1 && !chrom2) {
                 phenotype = "Wild type";
             }
@@ -147,4 +143,6 @@ public class Mouse {
         return line;
         
     }
+    
+    
 }
