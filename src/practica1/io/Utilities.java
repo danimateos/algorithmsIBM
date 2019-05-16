@@ -81,6 +81,24 @@ public class Utilities {
 
         return colony;
     }
+    
+    public static int intFromInput(BufferedReader console, String message){
+        System.out.println(message);
+        int result = -1;
+        boolean validInput = false;
+        
+        while (!validInput){
+            try{
+                result = Integer.parseInt(console.readLine());
+                validInput = true;
+            } catch (IOException ex) {
+                System.out.println("Couldnt read from console");
+            } catch (NumberFormatException ex) {
+                System.out.println("That's not a valid number");
+            }
+        }
+        return result;
+    }
 
     public static Colony takeColonyFromInput() throws IOException {
         BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
@@ -123,8 +141,10 @@ public class Utilities {
 
         System.out.println("Please input the new mouse's weight in grams:");
         int weight = Integer.parseInt(console.readLine());
+        
         System.out.println("Please input the new mouse's temperature in degrees C:");
         Float temperature = Float.parseFloat(console.readLine());
+        
         System.out.println("Please input any comments about the new mouse that you may have:");
         String comments = console.readLine();
 

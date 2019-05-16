@@ -58,7 +58,7 @@ public class TextMain {
                                     colony.add(mouse);
                                 } catch (IOException ex) {
                                     System.out.println("Could't create mouse from input");
-                                    ex.printStackTrace();
+                                   // ex.printStackTrace();
                                 }
                                 break;
                             case 4:

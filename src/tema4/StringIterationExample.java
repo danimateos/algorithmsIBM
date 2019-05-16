@@ -12,8 +12,11 @@ package tema4;
 public class StringIterationExample {
 
     public static void main(String[] args) {
+        
+        
         String test = "esto es una prueba";
 
+        
         for (char c : test.toCharArray()) {
             if (c == ' ') {
                 System.out.println("Es un espacio!");
